@@ -31,3 +31,4 @@ It highlights Saudi-made products through different pages, allowing users to bro
 This project aims to support the *Made in Saudi* initiative by creating a simple digital marketplace prototype that connects local products with customers.
 
 ---
+Disclaimer: All names, numbers, images, and content on this website are fictional and for demonstration purposes only. This project is provided solely to showcase development and coding skills and does not represent real business activity or real personal data.
