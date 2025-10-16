@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Saudi made</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style> 
+    
+.logout-button {
+    padding: 12px 25px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 15px;
+}
+
+.logout-button:hover {
+    background-color: #d63031;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+    transform: translateY(-2px);
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        #ma { height: 50%; width: 50%;}
+        
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #002060;
+            text-transform: capitalize;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 2px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button span {
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            width: 100%;
+        }
+
+        button:hover {
+            border: none;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .product-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function initMap() {
+        navigator.geolocation.getCurrentPosition(onSuccess);
+        function onSuccess(position) {
+        var uluru = { lat: 24.4575284, lng: 39.5425402};
+        var mymap = new google.maps.Map(document.getElementById('ma'), { zoom: 16, center: uluru });
+        var marker = new google.maps.Marker({ position: uluru, map: mymap });  
+        } 
+    }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html"><img class="logo" src="/images/saudi made logo.svg" width="145px" height="100%"></a>
+        <ul>
+            <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Our product</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">Search product</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html">My Cart</a></li>
+            <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
+            <button class="logout-button nav-item btn-outline-danger" onclick="location.href='Login.html'" style="padding-top: 9px;"><span></span>Log Out</button>
+        </ul>
+    </div>
+            <div class="container text-center rounded" style="background-image: url(/images/Registration_Login.jpg);">
+            <h1 class="animate__animated animate__fadeInDown" style="color: aliceblue;">Welcome <span id="clientName"></span> :)</h1>
+        </div>
+        <div class="container">
+            <div id="crs" class=" carousel slide " data-ride="carousel"> 
+                <div class="carousel-inner"> 
+                    <div class="carousel-item active">             
+                        <img height="335px" width="100%" src="images/saudi panner.PNG" alt="First image">
+                        <div class="animate__animated animate__fadeInDown carousel-caption" style="text-align: left; margin-right:30%; margin-bottom:5%;">
+                            <h2><strong>The Saudi Made Logo</strong></h2>
+                            <h5><strong>A logo that represents excellence and authenticity consumers can trust</strong></h5>
+                        </div>	                
+                    </div>
+                    <div class="carousel-item">             
+                        <img height="335px" width="100%" src="images/saudimade.jpg" alt="First image">
+                        <div class="animate__animated animate__fadeInDown carousel-caption">
+                            <h2 style="text-align: left; margin-right:50%; margin-bottom: 10%;"><strong>Together, there’s nothing we can’t accomplish.</strong></h2>
+                        </div>	                
+                    </div>             
+                    <div class="carousel-item">              
+                        <img height="335px" width="100%" src="images/Logo_Slider.jpg" alt="Second image">
+                        <div class="animate__animated animate__fadeInDown carousel-caption">
+                            <h2 style="text-align: left; margin-right:50%; margin-bottom: 10%;"><strong>Saudi Made is much more than a logo!</strong></h2>
+                        </div>           
+                    </div>            
+                    <div class="carousel-item">              
+                        <img height="335px" width="100%" src="images/Logo_Slider2.jpg" alt="Third image">
+                        <div class="animate__animated animate__fadeInDown carousel-caption">
+                            <h2 style="text-align: left; margin-right:50%; margin-bottom: 10%;"><strong>Our Vision: Making Saudi Arabia’s products the preferred choice.</strong></h2>
+                        </div>            
+                    </div>          
+                </div>
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#crs" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span> </a>
+                <a class="carousel-control-next" href="#crs" data-slide="next">
+                    <span class="carousel-control-next-icon"></span></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <span>
+                        <h3>
+                            <span style="color:#002060;">
+                                <strong>ONE SYMBOL SAYS IT ALL</strong>
+                            </span>
+                        </h3>
+                        <h4 style="color:#B58500;">This is a brandmark that conveys:</h4>
+                        <ul>
+                            <li>Quality and excellence</li>
+                            <li>Authenticity of identity and heritage</li>
+                            <li>Sustainability for the future</li>
+                            <li>A focus on striving for innovation</li>
+                        </ul>
+                    </span>
+                </div>
+                <div class=" col-xs-12 col-sm-12 col-md-7">
+                    <div style="margin-bottom:0;">
+                        <span>
+                            <p>
+                                The <span style="color:#006E33;"><strong>SAUDI MADE </strong></span>logo is the emblem of Made in Saudi program. It reflects the brand essence “Possibilities”.
+                                It represents the Kingdom’s heritage, prosperity, and growth towards providing high quality products and services locally and globally.
+                                The visual takes inspiration from the palm tree which represents prosperity and giving – attributes Saudi Arabia has long been embracing as a global economic power. 
+                                The palm shape is meagered with an arrow pointing to the top which resonates to the Kingdom ambitious plans for growth and development.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <img src="images/description of the logo.PNG" height="100%" width="100%">
+        </div>
+        <br>
+        <div class="container mb-5">
+            <h2 class="mb-4" style="color:#002060;">Our product</h2>
+            <div class="row g-3">
+                <div class="col-md-3"><img src="images/Productimages/cup.webp" class="product-img rounded" alt="Cup"></div>
+                <div class="col-md-3"><img src="images/Productimages/glasses.jpg" class="product-img rounded" alt="Glasses"></div>
+                <div class="col-md-3"><img src="images/Productimages/bag.png" class="product-img rounded" alt="Bag"></div>
+                <div class="col-md-3"><img src="images/Productimages/blush.png" class="product-img rounded" alt="Blusher"></div>
+                <div class="col-md-3"><img src="images/Productimages/musk.jpg" class="product-img rounded" alt="Musk"></div>
+                <div class="col-md-3"><img src="images/Productimages/Cap.jpg" class="product-img rounded" alt="Cap"></div>
+                <div class="col-md-3"><img src="images/Productimages/abaya.webp" class="product-img rounded" alt="Abaya"></div>
+                <div class="col-md-3"><img src="images/Productimages/shoes.jpg" class="product-img rounded" alt="Shoes"></div>
+            </div>
+        </div>
+        <div class="container mb-5">
+            <h2 class="mb-4" style="color:#002060;">Our Team</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="images/Abdulrahman Al-Shaker.jpeg" style="width: 70% ; margin-bottom: 1.5rem ;" class="team-img rounded" alt="Abdulrahman Al-Shaker image">
+                    <h5 style="color:#B58500;">The CEO / Abdulrahman Al-Shaker</h5>
+                    <p>Chief Executive Officer of the Saudi Export Development Authority</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images//Adel bin Bar Barja.png" style="width: 70% ; margin-bottom: 1.5rem ;"class="team-img rounded" alt="Adel bin Bar Barja image">
+                    <h5 style="color:#B58500;">Adel bin Bar Barja</h5>
+                    <p>Deputy Secretary General for Promotion and Identity at the Saudi Export Development Organisation</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/Faisal Al-Maghlouth.png" style="width: 70% ; margin-bottom: 1.5rem ;"class="team-img rounded" alt="Faisal Al-Maghlouth image">
+                    <h5 style="color:#B58500;">Faisal Al-Maghlouth</h5>
+                    <p>General Manager of the Made in Saudi Arabia program</p>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-5">
+            <h2 class="mb-4" style="color:#002060;">Our services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#B58500;">Fast shipping</h5>
+                            <p class="card-text">Deliver your local shepment within 48 hours. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#B58500;">National support</h5>
+                            <p class="card-text">All product are locally made by Saudi hands</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#B58500;">Guaranteed quality</h5>
+                            <p class="card-text">We are committed to the highest standards of quality and excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!--Footer-->
+            <div class="container-fluid mt-4 rounded" id="contact" style="padding: 30px; background-color: #1b9589;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="ma" style="height: 100%; width: 100% ;"></div>
+                    </div>
+                    <div class="col-md-6" style="color: beige;"><h4>Contact us</h4>
+                        <p><i class="fa fa-home fa-2x"></i> Madinah Al Munawarah KSA</p>
+                        <hr>
+                        <p><i class="fa fa-phone fa-2x"></i> +966 54593999</p>
+                        <hr>
+                        <p><i class="fa fa-envelope fa-2x"></i> support_SM@outlook.com</p>
+                        <hr>
+                        <a style="color: beige;" href="https://www.facebook.com/groups/category/travel/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+                        <a style="color: beige;" href="https://x.com/?lang=ar" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                        <a style="color: beige;" href="https://sa.linkedin.com" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                        <a style="color: beige;" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("clientName").innerText = localStorage.getItem("currentUser");
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoLVOv6pfvrJ2NX4rezpyO9zxqxXAV5eo&callback=initMap" async> </script>
+</body>
+</html>

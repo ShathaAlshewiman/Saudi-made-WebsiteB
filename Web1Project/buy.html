@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkout | Saudi made</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+    .search-container {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-box {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .search-box input {
+        padding: 12px 15px;
+        width: 320px;
+        border-radius: 30px;
+        border: 2px solid #009688;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-box input:focus {
+        border-color: #00796b;
+        box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+    }
+
+    .search-box button {
+        padding: 12px 25px;
+        background: #009688;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-box button:hover {
+        background-color: #00796b;
+        box-shadow: 0 5px 15px rgba(0, 150, 136, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .search-box button:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+.logout-button {
+    padding: 12px 25px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 15px;
+}
+
+.logout-button:hover {
+    background-color: #d63031;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+    transform: translateY(-2px);
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #002060;
+            text-transform: capitalize;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 2px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button span {
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            width: 100%;
+        }
+
+        button:hover {
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html"><img class="logo" src="/images/saudi made logo.svg" width="150px" height="50%"></a>
+        <ul>
+            <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Our product</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">Search product</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html">My Cart</a></li>
+            <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
+            <button class="logout-button nav-item btn-outline-danger" onclick="location.href='Login.html'" style="padding-top: 9px;"><span></span>Log Out</button>
+        </ul>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Payment Details</h3>
+                <form onsubmit="return confirmPurchase()">
+                    <div class="mb-3">
+                        <label class="form-label">Select payment method:</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" value="Mada Card" checked>
+                            <label class="form-check-label">Mada Card</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" value="Bank Transfer">
+                            <label class="form-check-label">Bank Transfer</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" value="Cash on Delivery">
+                            <label class="form-check-label">Cash on Delivery</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Total Amount:</label>
+                        <div id="totalDisplay" class="form-control bg-light">--</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="note" class="form-label">Notes:</label>
+                        <textarea id="note" class="form-control" placeholder="Enter any notes..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">submit</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="mb-3">Watch how checkout works</h3>
+                <video width="100%" controls autoplay muted loop>
+                    <source src="images/purchasing.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+    <script>
+        const totalAmount = localStorage.getItem("totalAmount");
+        document.getElementById("totalDisplay").innerText = totalAmount ? totalAmount + " SAR" : "No total available";
+
+        function confirmPurchase() {
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            const confirmMsg = "Payment Method: " + paymentMethod + "\nTotal: " + totalAmount + " SAR\n\nAre you sure you want to complete the purchase?";
+
+            if (confirm(confirmMsg)) {
+                alert("Purchase completed successfully. Thank you!");
+                localStorage.removeItem("totalAmount");
+                window.location.replace("/home.html");
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

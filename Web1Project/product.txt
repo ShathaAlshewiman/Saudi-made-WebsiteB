@@ -1,0 +1,49 @@
+[{
+    "title":"Cup",
+    "description":"Handcrafted Clay Cup",
+    "image":"cup.webp",
+    "price":104
+ },
+ {
+    "title":"Glasses",
+    "description":"Stylish sunglasses",
+    "image":"glasses.jpg",
+    "price":295
+ },
+ {
+    "title":"Bag",
+    "description":"Beaded handbag",
+    "image":"bag.png",
+    "price":599
+ },
+ {
+    "title":"Blusher",
+    "description":"A long-lasting creamy blush",
+    "image":"blush.png",
+    "price":34.96
+ },
+ {
+    "title":"Musk",
+    "description":"Consisting of musk and wood",
+    "image":"musk.jpg",
+    "price":210
+ },
+ {
+    "title":"Cap",
+    "description":"Saudi Grand Prix Blue Cap",
+    "image":"Cap.jpg",
+    "price":190
+ },
+ {
+    "title":"Abaya",
+    "description":"Black linen and crepe fabric abaya",
+    "image":"abaya.webp",
+    "price":437
+ },
+ {
+    "title":"Shoes",
+    "description":"Oriental shoes",
+    "image":"shoes.jpg",
+    "price":245
+ }
+]

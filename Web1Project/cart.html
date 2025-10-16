@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart | Saudi made</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+    
+    .form-box {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .form-box input {
+        padding: 12px 15px;
+        width: 320px;
+        border-radius: 30px;
+        border: 2px solid #009688;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-box input:focus {
+        border-color: #00796b;
+        box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+    }
+
+    .form-box button {
+        padding: 12px 25px;
+        background: #009688;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-box button:hover {
+        background-color: #00796b;
+        box-shadow: 0 5px 15px rgba(0, 150, 136, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .form-box button:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+.logout-button {
+    padding: 12px 25px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 15px;
+}
+
+.logout-button:hover {
+    background-color: #d63031;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+    transform: translateY(-2px);
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #002060;
+            text-transform: capitalize;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 2px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button span {
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            width: 100%;
+        }
+
+        button:hover {
+            border: none;
+        }
+
+        .search-container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="home.html"><img class="logo" src="/images/saudi made logo.svg" width="150px" height="50%"></a>
+        <ul>
+            <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Our product</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">Search product</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html">My Cart</a></li>
+            <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
+            <button class="logout-button nav-item btn-outline-danger" onclick="location.href='Login.html'" style="padding-top: 9px;"><span></span>Log Out</button>
+        </ul>
+    </div>
+
+    <div class="container my-5 text-center">
+
+        <div class="container text-center my-4 rounded" style="background-image: url(/images/Registration_Login.jpg);">
+            <h2 class="animate__animated animate__fadeInDown" style="color: aliceblue;">Add a product to the Cart</h2>
+        </div>
+
+        <div class="form-box">
+            <input type="text" id="tt" onchange="getprice()" placeholder="Enter the product name">
+            <label id="priceLabel"></label>
+            Enter Quantity <input type="number" id="num" size="5" value="1">
+            <button onclick="add()" style="padding-top: 9px;">Buy</button>
+            <div id="mess"></div>
+            <br>
+            <button onclick="checkout()" style="padding-top: 9px;">Check out</button>
+        </div>
+
+        <div class="center-container" style="height: 100%; margin:50px; display: flex; justify-content: center; align-items: center;">
+            <table border="1" id="table" class="table table-bordered text-center" style="width: auto; margin: auto;"></table>
+        </div>
+
+    </div>   
+    
+    <script>
+        price = 0;
+        cartItems = []; 
+        let image=""; 
+        async function getprice() {
+            let response = await fetch('Product.txt');
+            let x = await response.json();
+            price = "no product was found";
+            for (i = 0; i < x.length; i++) {
+                if (document.getElementById("tt").value.toLowerCase() == x[i].title.toLowerCase()) {
+                    price = x[i].price;
+                    image = "images/Productimages/" + x[i].image;
+                }
+            }
+            document.getElementById("priceLabel").innerHTML = price;
+        }
+        function add() {
+            item = {
+                title: tt.value,
+                price: price,
+                quant: num.value,
+                image: image,
+            };
+            cartItems.push(item);
+            display();
+            priceLabel.innerHTML = "";
+            tt.value = "";
+            num.value = 1;
+        }
+        function display() {
+            let ta = "<tr><th>Name</th><th>Price</th><th>Quantity</th><th>Image</th><th>Delete</th></tr>";
+            for (var i = 0; i < cartItems.length; i++) {
+                ta += "<tr>" +
+            "<td>" + cartItems[i].title + "</td>" +
+            "<td>" + cartItems[i].price + "</td>" +
+            "<td>" + cartItems[i].quant + "</td>" +
+            "<td><img src='" + cartItems[i].image + "' width='25%' height='auto' style='margin:5px auto'></td>" +  // Display image
+            "<td><button style='margin:50% auto' class='btn btn-info' onclick='del(" + i + ")'>Delete</button></td>" +
+            "</tr>";
+            }
+            document.getElementById("table").innerHTML = ta;
+        }
+        function del(index) {
+                    cartItems.splice(index, 1);
+                    display();
+                }
+        function checkout() {
+            tot = 0; 
+            for (var i = 0; i < cartItems.length; i++) {
+                tot += cartItems[i].price * cartItems[i].quant;
+            }
+            localStorage.setItem("totalAmount", tot);
+            alert("Checkout complete. Total:"+ tot+" SAR. Thank you!");
+            window.location.replace("/buy.html");
+            cartItems = [];
+            document.getElementById("table").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

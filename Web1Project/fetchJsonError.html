@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+   
+            <table id="productTable" ></table>
+      
+    <script>
+        getText('product.txt');
+        async function getText(url) {
+                let response = await fetch(url);
+                
+                let x = await response.json();
+                let table = "<tr><th>Title</th><th>description</th><th>price</th></tr>";
+                for (let i = 0; i < x.length; i++) {
+                    table += "<tr><td>"+x[i].title+"</td><td>"+x[i].description+"</td><td>"+
+                        "</td><td>"+x[i].price+"</td></tr>";
+                }
+                document.getElementById("productTable ").innerHTML = table;
+                //console.error("Error fetching or parsing data:", error);
+            }
+       
+</script>
+
+</body>
+</html>
